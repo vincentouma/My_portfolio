@@ -1,0 +1,85 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+
+{% block content %} {{block.super}}
+<style>
+h1{
+  text-align: center;
+  color: white;
+}
+
+body{
+    background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+
+}
+
+</style>
+<div class="containe">
+<h1>Projects have done.</h1>
+
+<div class="container-fluid">
+   
+    <div class="row" style="margin-top:30px;">
+        {% for project_item in all_project %}
+ 
+        <div class="col-md-5 main-page d-flex"  style=" margin-top: 40px; margin-bottom:50px;">
+            <div class="card card-cascade wider flex-fill ">
+ 
+                <!-- Card image -->
+                <div class="">
+                    <a data-toggle="modal" data-target="#{{project_item.id}}"><img class="card-img-top"
+                            src="{{project_item.image.url}}" alt="{{image.title}}" height="200px" width="250px"></a>
+                </div>
+                <div class=""></div>
+                <!--Card content-->
+                <div class="card-body">
+ 
+                    <!--Title-->
+                    <h4 class="card-title">{{ project_item.title }}</h4>
+                    <!--Text-->
+                    <p class="card-text">{{ project_item.details }}</p>
+                    <p><a href="{{ project_item.deployed_link }}">Live Project Link</a></p> 
+                    <p><a href="{{ project_item.github_link }}">Project GitHub Link</a></p>                    
+                 
+                    
+ 
+                </div>
+            </div>
+        </div>
+     
+        <!--Modal: modalYT-->
+        <div class="modal fade" id="{{project_item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">                               
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img class="embed-responsive-item" src="{{project_item.image.url}}" alt="Image Loading"
+                                style="margin:10px;" allowfullscreen>
+                        </div>                              
+ 
+            </div>
+        </div>
+        <!--Modal: modalYT-->
+ <br>
+ <br>
+ 
+        {% empty %}
+    
+ 
+        <div class="container">
+        <div class="row">
+            <h1 class="text-center" style="font-style:italics;"> No Projects Yet</h1>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Card deck -->
+    <div class="row">
+    </div>
+    
+
+ </div>
+ {% endblock %}

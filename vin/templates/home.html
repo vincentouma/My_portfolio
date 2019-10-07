@@ -1,16 +1,54 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Portfolio</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-  
-  
-    <h1>Welcome to my Portfolio</h1>
-</body>
-</html>
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% load staticfiles%}
+
+{% block content %} {{block.super}}
+
+<div class="navbar">
+        <a href="/" class="active">HOME</a>
+        <a href="{% url 'all_project' %}">PROJECT</a>
+        <a href="{% url 'skill' %}">SKILLS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+<div class="container">
+    <h1> I'm Vincent  </h1>
+    <h2>I CODE like I mean IT</h2>
+
+
+<style>
+body{
+    background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+
+}
+h1{
+    text-align: center;
+    margin-top: 18%;
+    color:white;
+}
+h2{
+    text-align: center;
+    color: white;
+}
+.navbar {
+  background-color: transparent;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.5%;
+}
+a{
+    padding: 4%;
+    color: rgb(23, 24, 65);
+    font-size: x-large;
+}
+
+</style>
+</div>
+
+{% endblock%}

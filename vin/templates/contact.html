@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{%load staticfiles%}
+
+{% block content %} 
+{{block.super}}
+<style>
+body{
+    background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+}
+p,h1,h3{
+color: white;
+}
+.img{
+    display: flex;
+    
+}
+
+</style>
+
+<div class="container"> <h1>contact me</h1></div>       
+
+
+    
+{% endblock %}
