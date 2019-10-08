@@ -78,8 +78,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
 
-Database
-https: // docs.djangoproject.com/en/1.11/ref/settings/  # databases
+
 
 MODE = config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
@@ -109,8 +108,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 
-Password validation
-https: // docs.djangoproject.com/en/1.11/ref/settings/  # auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
